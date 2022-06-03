@@ -2,6 +2,7 @@ const initialState = {
 	period: 'day',
 	magnitude: 'significant',
 	data: null,
+	metadata: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,6 +29,14 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				data,
+			};
+		}
+		case 'SET_EARTHQUAKE_METADATA': {
+			const { metadata } = action;
+
+			return {
+				...state,
+				metadata,
 			};
 		}
 		default:
