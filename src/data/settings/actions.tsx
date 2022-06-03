@@ -6,8 +6,8 @@ export const setTimePeriod = (period: TimePeriod) => ({
 	period,
 });
 
-export const setEarthquakeType = (magnitude: EarthquakeMagnitude) => ({
-	type: 'SET_EARTHQUAKE_TYPE' as const,
+export const setEarthquakeMagnitude = (magnitude: EarthquakeMagnitude) => ({
+	type: 'SET_EARTHQUAKE_MAGNITUDE' as const,
 	magnitude,
 });
 

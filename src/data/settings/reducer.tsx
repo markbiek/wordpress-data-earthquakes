@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
 				period,
 			};
 		}
-		case 'SET_EARTHQUAKE_TYPE': {
+		case 'SET_EARTHQUAKE_MAGNITUDE': {
 			const { magnitude } = action;
 
 			return {
