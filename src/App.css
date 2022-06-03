@@ -14,6 +14,11 @@ section {
 	heigth: 50%;
 }
 
+label {
+	display: block;
+	margin-top: 1rem;
+}
+
 .loading {
 	width: 100vw;
 	height: 100vh;

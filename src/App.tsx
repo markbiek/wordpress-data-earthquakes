@@ -23,6 +23,7 @@ function App() {
 	}
 
 	const { title } = metadata;
+	console.log({ data });
 
 	return (
 		<main>
@@ -43,6 +44,22 @@ function App() {
 							<option value='hour'>Hour</option>
 							<option value='day'>Day</option>
 							<option value='week'>Week</option>
+						</select>
+
+						<label htmlFor='magnitude'>Magnitude:</label>
+						<select
+							name='magnitude'
+							id='magnitude'
+							value={magnitude}
+							onChange={(e) => {
+								setEarthquakeMagnitude(e.target.value);
+							}}
+						>
+							<option value='significant'>Significant</option>
+							<option value='4.5'>4.5+</option>
+							<option value='2.5'>2.5+</option>
+							<option value='1.0'>1.0+</option>
+							<option value='all'>All</option>
 						</select>
 					</form>
 				</article>
