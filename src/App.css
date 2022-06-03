@@ -11,12 +11,16 @@ main {
 
 section {
 	width: 50%;
-	heigth: 50%;
+	height: 50%;
 }
 
 label {
 	display: block;
 	margin-top: 1rem;
+}
+
+.details-link img {
+	width: 18px;
 }
 
 .loading {

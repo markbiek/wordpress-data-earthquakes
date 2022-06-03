@@ -1,6 +1,7 @@
 import { useDispatch, useSelect } from '@wordpress/data';
 import { SETTINGS_STORE_KEY } from './data';
 
+import external from './img/external.svg';
 import './App.css';
 
 function App() {
@@ -62,6 +63,47 @@ function App() {
 							<option value='all'>All</option>
 						</select>
 					</form>
+				</article>
+				<article>
+					{data.length <= 0 && (
+						<p>No earthquakes for this time-period/magnitude.</p>
+					)}
+					{data.length > 0 && (
+						<>
+							<h2>Earthquakes</h2>
+							<table>
+								<thead>
+									<tr>
+										<th>Magnitude</th>
+										<th>Place</th>
+										<th></th>
+									</tr>
+								</thead>
+								{data.map((item) => {
+									const {
+										id,
+										properties: { place, mag, url },
+									} = item;
+									return (
+										<tr key={id}>
+											<td>{mag}</td>
+											<td>{place}</td>
+											<td>
+												<a
+													href={url}
+													className='details-link'
+													target='_blank'
+													rel='noopener'
+												>
+													<img src={external} />
+												</a>
+											</td>
+										</tr>
+									);
+								})}
+							</table>
+						</>
+					)}
 				</article>
 			</section>
 		</main>
